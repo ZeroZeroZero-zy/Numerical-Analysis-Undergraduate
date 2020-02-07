@@ -1,0 +1,13 @@
+clc;
+clear;
+%
+A=hilb(4);
+b=[167;125;101;85];
+x0=zeros(4,1);
+eps=1e-6;
+N=10^6;
+%
+[x1,k1]=SteepestDescent(A,b,x0,eps,N)
+[x2,k2]=MinimalResidual(A,b,x0,eps,N)
+[x3,k3]=ConjugateGradient(A,b,x0,eps,N)
+answer=A\b
